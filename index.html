@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<meta name='charset' content='utf-8'>
+	<title>Browser Benchmarker Test/Demo</title>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'></script>
+	<script src='bb/lazyload.js'></script>
+	<script src='bb/main.js'></script>
+</head>
+<body>
+
+	<p>
+		<a href='#' id='run_benchmark'>Click to run benchmark</a>
+	</p>
+
+	<script type='text/javascript'>
+	$(function()
+	{
+		$('#run_benchmark').click(function()
+		{
+			LazyLoad.js([
+				'bb/tests/math.js',
+				'bb/tests/dom.js'
+			], function()
+			{
+				var bb      = new BrowserBenchmark.app();
+				var results = bb.init();
+
+				console.log(results);
+			});
+
+			return false;
+		});
+	});
+	</script>
+
+</body>
+</html>
