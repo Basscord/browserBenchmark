@@ -12,7 +12,7 @@ BrowserBenchmark.tests.dom = function(cycles)
 	while(cycles > 0)
 	{
 		var element = document.createElement('div');
-			element.innerHTML = 'Foo';
+            element.innerHTML = 'Foo';
 
 		document.body.appendChild(element);
 		document.body.removeChild(element);
