@@ -7,6 +7,8 @@
  */
 BrowserBenchmark.tests.dom = function(cycles)
 {
+	'use strict';
+
 	cycles = cycles || 10000;
 
 	while(cycles > 0)

@@ -23,6 +23,8 @@ BrowserBenchmark.tests = {};
  */
 BrowserBenchmark.app = function(tests) {
 
+	'use strict';
+
 	var results = {};
 
 	tests = tests || ['math', 'dom'];

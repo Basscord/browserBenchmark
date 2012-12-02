@@ -7,6 +7,8 @@
  */
 BrowserBenchmark.tests.math = function(cycles)
 {
+	'use strict';
+
 	cycles = cycles || 2000000;
 
 	var foo;
