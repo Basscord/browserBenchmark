@@ -3,36 +3,33 @@
 <head>
 	<meta name='charset' content='utf-8'>
 	<title>Browser Benchmarker Test/Demo</title>
-	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'></script>
-	<script src='lazyload.js'></script>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
 	<script src='bb/main.js'></script>
+	<script src='bb/tests/math.js'></script>
+	<script src='bb/tests/dom.js'></script>
 </head>
 <body>
 
 	<p>
-		<a href='#' id='run_benchmark'>Click to run benchmark</a>
+		<a href='#' id='run_benchmark'>Click to run benchmark</a>&nbsp;(Lower is better. Over 200 is bad.)
 	</p>
 
 	<script type='text/javascript'>
-	$(function()
-	{
-		$('#run_benchmark').click(function()
-		{
-			LazyLoad.js([
-				'bb/tests/math.js',
-				'bb/tests/dom.js'
-			], function()
-			{
-				var bb      = new BrowserBenchmark.app();
-				var results = bb.init();
+	jQuery(function($){
 
-				console.log(results);
+		$('#run_benchmark').click(function() {
+
+			var bb      = new BrowserBenchmark.app();
+			var results = bb.init();
+
+			$.each(results, function(test, result){
+				$("#results").append("<div><em>"+test+": </em><span>"+result+"</span></div>")
 			});
-
-			return false;
+			
+			$("#results").append("<hr/>");
 		});
 	});
 	</script>
-
+	<div id="results"></div>
 </body>
 </html>
