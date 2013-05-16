@@ -12,7 +12,7 @@ My test should only take a few milliseconds, and give the web-application a gene
 Usage example:
 
 ```javascript
-var tests   = new BrowserBenchmark.app(['math']);
+var tests   = new BrowserBenchmark.app();
 var results = tests.init();
 if(results.overall > 200){
 	// slow browser, don't execute heavy JS
